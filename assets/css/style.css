@@ -1,408 +1,591 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500&display=swap");
+@font-face {
+    font-family: work sans;
+    src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+    font-weight: 100 900
+}
+
+
+/* CSS Reset */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+
+/* CSS General */
+
 html {
-    font-size: 62.5%;
-    font-family: "Work Sans", sans-serif;
+    font-size: 100%;
 }
 
 body {
+    font-family: work sans;
     background-color: #2e2e2e;
-    display: flex;
-    justify-content: center;
 }
 
 #container {
+    display: flex;
+    justify-content: center;
     position: relative;
-    background-color: #2e2e2e;
     width: 1440px;
     border: 1px solid #ebccc2;
     height: auto;
 }
 
-header {
-    padding: 20px 20px;
-    position: fixed;
-    width: 100%;
+h1 {
+    color: #ebccc2;
+    font-weight: 300;
+    font-size: 2rem;
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h2 {
+    color: #ebccc2;
+    font-weight: 300;
+    font-size: 2rem;
 }
 
-header nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+p {
+    color: rgb(115, 115, 115);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+li {
     list-style: none;
-    width: 45vw;
 }
 
-header nav ul li a {
+a {
     text-decoration: none;
-    color: #867772;
-    font-size: 1.4rem;
+    color: rgb(115, 115, 115);
+    font-size: 12px;
 }
 
-header nav ul li:nth-of-type(1) {
-    padding: 0 50px;
-}
-
-header nav ul li:nth-of-type(5) {
-    padding: 0 50px;
-}
-
-header nav ul li a:hover {
+a:hover {
     color: rgb(234, 204, 194);
-    text-decoration: underline;
 }
 
-aside {
-    position: fixed;
-    top: 20vh;
-}
 
-aside nav ul {
+/* -------- navigation top --------*/
+
+#headnav {
     display: flex;
-    flex-direction: column;
-    color: #867772;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100vw;
 }
 
-aside nav ul li i {
-    font-size: 1.8rem;
-    margin: 0 20px 2px 20px;
+#headnav ul {
+    display: flex;
 }
 
-aside nav ul li a {
-    text-decoration: none;
-    color: #867772;
-    font-size: 1.4rem;
-    margin-left: 20px;
+#headnav ul li a {
+    margin: 10px;
+    color: rgb(234, 204, 194);
+    opacity: .3;
+    transition: all .5s ease-out;
 }
 
-aside nav ul li:hover a {
-    color: #fff;
+#headnav ul li:nth-of-type(1),
+#headnav ul li:nth-of-type(5) {
+    margin: 0 70px
 }
 
-aside nav ul li:hover i {
+#headnav ul li:nth-of-type(5) {
+    margin-right: 140px;
+}
+
+#headnav ul li a:hover {
+    border-bottom: 1.5px solid rgb(234, 204, 194);
+    line-height: .8em;
+    opacity: 1;
+    transition: all .5s ease
+}
+
+
+/* -------- navigation aside --------*/
+
+#sidenav {
+    position: fixed;
+    top: 30vh;
+}
+
+.outerRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    height: 15px;
+    width: 15px;
     border: 1px solid #fff;
+    opacity: .3;
+    transition: all .5s ease-out;
     border-radius: 50%;
 }
 
-aside nav ul div {
-    height: 60px;
-    width: 300px;
-    border-left: 1px solid #867772;
-    margin-left: 28.5px;
+.innerRing {
+    height: 5px;
+    width: 5px;
+    padding: 2px;
+    border: 1px solid #fff;
+    opacity: .6;
+    transition: all .5s ease-out;
+    border-radius: 50%;
+}
+
+#sidenav li {
+    display: flex;
+}
+
+#sidenav li a {
+    margin-left: 38px;
+    line-height: 2;
+}
+
+aside a {
+    text-align: top;
+    font-size: 10px;
+    color: #fff;
+    opacity: .3;
+    transition: all .5s ease-out;
+}
+
+aside a:hover {
+    color: #fff;
+    opacity: 1;
+    transition: all .5s ease
+}
+
+
+/* aside a:hover + .outerRing{
+    color: #fff;
+    opacity: 1;
+    transition: all .5s ease
+} */
+
+.line {
+    height: 40px;
+    width: 1px;
+    margin-bottom: 15px;
+    margin-left: 23px;
+    background-color: #fff;
+    opacity: .3;
+}
+
+
+/* -------- Active Circles --------*/
+
+
+/* ABOUT */
+
+#landingPage #outerRing1 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#landingPage .innerRing {
+    opacity: .3;
+}
+
+#landingPage #status1 {
+    opacity: 1;
+}
+
+
+/* LOUNGER */
+
+#loungerPage #outerRing2 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#loungerPage .innerRing {
+    opacity: .3;
+}
+
+#loungerPage #status2 {
+    opacity: 1;
+}
+
+
+/* EXPERIENCE */
+
+#experiencePage #outerRing3 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#experiencePage .innerRing {
+    opacity: .3;
+}
+
+#experiencePage #status3 {
+    opacity: 1;
+}
+
+
+/* INSPIRATION */
+
+#inspirationPage #outerRing4 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#inspirationPage .innerRing {
+    opacity: .3;
+}
+
+#inspirationPage #status4 {
+    opacity: 1;
+}
+
+
+/* SHOP */
+
+#shopPage #outerRing5 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#shopPage .innerRing {
+    opacity: .3;
+}
+
+#shopPage #status5 {
+    opacity: 1;
+}
+
+
+/* -------- ---------------- --------*/
+
+
+/* -------- ABOUT --------*/
+
+
+/* Section 1 */
+
+#landingPage section:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+#landingPage section:nth-of-type(1) div:nth-of-type(1) {
+    padding: 10%;
+    margin-left: 15%;
+    margin-right: 40%;
+}
+
+#landingPage section:nth-of-type(1) div:nth-of-type(2) img {
+    width: 90vw;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/* Section 2 */
+
+#landingPage section:nth-of-type(2) {
+    display: flex;
+    margin: 10% 10%;
+}
+
+#landingPage section:nth-of-type(2) img {
+    width: 35vw;
+}
+
+#landingPage section:nth-of-type(2) div {
+    padding-left: 5%;
+}
+
+#landingPage section:nth-of-type(2) div h2 {
+    padding-top: 20%;
+    padding-bottom: 5%;
+}
+
+
+/* -------- ---------------- --------*/
+
+
+/* -------- LOUNGER --------*/
+
+
+/* Section 1 */
+
+#loungerPage main {
+    display: flex;
+}
+
+#loungerPage main div {
+    height: 100vh;
+    width: 250vw;
+    background-image: url(../img/section-voyager.jpg);
+    background-size: cover;
+    background-position: -250px
+    /* keine Ahnung was hier passiert ist :D */
+}
+
+#loungerPage main article {
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#loungerPage main article h2 {
+    margin-bottom: 15%;
+}
+
+
+/* -------- ---------------- --------*/
+
+
+/* -------- Experience --------*/
+
+
+/* Section 1 */
+
+#experiencePage main {
+    display: flex;
+}
+
+#experiencePage main div {
+    height: 100vh;
+    width: 320vw;
+    background-image: url(../img/section-experience-1.jpg);
+    background-size: cover;
+    background-position: -250px
+    /* keine Ahnung was hier passiert ist :D */
+}
+
+#experiencePage main article {
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#experiencePage main article h2 {
+    margin-bottom: 15%;
+}
+
+
+/* -------- ---------------- --------*/
+
+
+/* -------- Inspiration --------*/
+
+
+/* Section 1 */
+
+#inspirationPage video {
+    max-width: 65vw;
+    height: auto;
+    padding: 8% 17.5%;
+}
+
+#inspirationPage h3 {
+    color: #ebccc2;
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin-bottom: 1%
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+#buttons li {
+    color: #fff;
+    opacity: 0.8;
+    font-size: .7rem;
+    font-weight: 200;
+    line-height: 1.5;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 3px 20px;
+    margin-right: 5px;
+}
+
+#alchemy {
+    margin-left: 17.5%;
+}
+
+
+/* Section 2 */
+
+#raster {
+    display: flex;
+    margin: 7.5%;
+    margin-left: 17.5%
+}
+
+#raster img {
+    width: 470px;
+    height: auto;
+}
+
+#raster article {
+    padding-left: 5%;
+    width: 470px;
+    height: auto;
+}
+
+#raster h4 {
+    color: #ebccc2;
+    font-weight: 200;
+    font-size: 1.2rem;
+    padding-top: 15%;
+    padding-bottom: 3%;
+}
+
+#raster p {
+    width: 425px;
+    padding-top: 10.5%;
+    padding-bottom: 30%;
+}
+
+
+/* -------- ---------------- --------*/
+
+
+/* -------- SHOP --------*/
+
+
+/* Section 1 */
+
+#shopPage main {
+    display: flex;
+}
+
+#shopPage main div {
+    height: 100vh;
+    width: 300vw;
+    background-image: url(../img/section-composition4.jpg);
+    background-size: cover;
+    background-position: -250px
+    /* keine Ahnung was hier passiert ist :D */
+}
+
+#shopPage main section {
+    width: 200vw;
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+#shopPage main section h3 {
+    color: #ebccc2;
+    font-weight: 300;
+    font-size: 1.7rem;
+    padding-bottom: 2%;
+}
+
+#shopPage main section p:nth-of-type(2) {
     margin-bottom: 10px;
 }
 
-.about h1 {
-    padding: 20vh 45vw 20vh 25vw;
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.about section {
-    background-image: url("../img/section-about-1.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 90vw;
-    height: 100vh;
-    margin: 0 5vw;
-}
-
-.about article {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20vh 13vw;
-}
-
-.about article img {
-    width: 50%;
-}
-
-.about article div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 50%;
-    height: 80vh;
-    padding: 10vh 5vw;
-}
-
-.about article div h2 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.about article div p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.lounger section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.lounger section div {
-    width: 50vw;
-    background-image: url("../img/section-voyager.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-}
-
-.lounger section article {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0 5vw;
-    height: 80vh;
-}
-
-.lounger section article h3 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 10vh 0;
-}
-
-.lounger section article p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.experience section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.experience section div {
-    width: 55vw;
-    background-image: url("../img/section-experience-1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-}
-
-.experience section article {
-    width: 45vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0 5vw;
-    height: 80vh;
-}
-
-.experience section article h3 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 10vh 0;
-}
-
-.experience section article p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.inspiration {
-    padding: 0 20vw;
-}
-
-.inspiration iframe {
-    padding: 20vh 0;
-    border-style: none;
-}
-
-.inspiration .section1 h4 {
-    font-size: 2rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.inspiration .section1 h5 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 1vh 0 3vh 0;
-}
-
-.inspiration .section1 div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 17vw;
-}
-
-.inspiration .section1 div p {
-    border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 5px 10px 5px 10px;
-    color: #867772;
-    font-size: 1.4rem;
-}
-
-.inspiration .section1 p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-    padding: 3vh 0;
-}
-
-.inspiration .grid {
-    display: grid;
-    grid-template-columns: 30vw 30vw;
-    grid-template-rows: 60vh 60vh;
-    padding: 20vh 0;
-    width: 60vw;
-}
-
-.inspiration .grid .bild1 {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    width: 100%;
-}
-
-.inspiration .grid .article1 {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    padding: 10vh 2vw;
-}
-
-.inspiration .grid .article1 h4 {
-    font-size: 2rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.inspiration .grid .article1 h5 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 1vh 0 3vh 0;
-}
-
-.inspiration .grid .article1 p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-    padding: 3vh 0;
-}
-
-.inspiration .grid .article2 {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    padding: 10vh 2vw;
-}
-
-.inspiration .grid .article2 h4 {
-    font-size: 2rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.inspiration .grid .article2 h5 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 1vh 0 3vh 0;
-}
-
-.inspiration .grid .article2 p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-    padding: 3vh 0;
-}
-
-.inspiration .grid .bild2 {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    width: 100%;
-}
-
-.shop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.shop div {
-    width: 55vw;
-    background-image: url("../img/section-composition4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-}
-
-.shop article {
-    text-align: center;
-    width: 45vw;
-}
-
-.shop article h6 {
-    font-size: 3.5rem;
-    color: #ebccc2;
-    font-weight: 300;
-    letter-spacing: 2px;
-    padding: 1vh 0 3vh 0;
-}
-
-.shop article p {
-    font-size: 1.6rem;
-    color: rgb(115, 115, 115);
-    letter-spacing: 1px;
-    line-height: 1.5;
-    padding-bottom: 2vh;
-}
-
-.shop article button {
+#buy {
     background-color: #ebccc2;
-    border: none;
-    color: #2e2e2e;
+    color: #000;
     padding: 10px 20px;
     border-radius: 2px;
-    font-size: 1.2rem;
-    cursor: pointer;
 }
 
 
-/*# sourceMappingURL=style.css.map */
+/* -------- ---------------- --------*/
+
+
+/* -------- SUBSCRIBE --------*/
+
+
+/* Section 1 */
+
+#subscribePage main {
+    display: flex;
+}
+
+#subscribePage main div {
+    height: 100vh;
+    width: 54%;
+    background-image: url(../img/section-composition4.jpg);
+    background-size: cover;
+    background-position: -250px
+    /* keine Ahnung was hier passiert ist :D */
+}
+
+#subscribePage main article {
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#subscribePage p {
+    width: 425px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#subscribePage main article h3 {
+    color: #ebccc2;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding-bottom: 3%;
+}
+
+.input {
+    margin-bottom: 8px;
+    width: 300px;
+    outline: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+::placeholder {
+    padding-left: 5px;
+}
+
+#Submit {
+    background-color: #ebccc2;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 2px;
+    width: 100px;
+    text-align: center;
+    transition: all .5s ease-out;
+}
+
+#Submit:hover {
+    background-color: #cc8f7a;
+    transition: all .5s ease
+}
+
+#Message {
+    height: 100px;
+}
+
+
+/* MEDIAQUERIES ARE NOT FUNCTIONAL YET ... 
+FULLSCREEN ONLY PLEASE */
+
+
+/* smaller sized tablets */
+
+@media (max-width: 735px) {
+    html {
+        font-size: min(60%);
+    }
+}
+
+
+/* smartphones */
+
+@media (max-width: 576px) {}
