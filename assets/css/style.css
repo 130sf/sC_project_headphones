@@ -70,7 +70,7 @@ a:hover {
 #headnav {
     display: flex;
     padding: 35px 30px;
-    margin-left: 55vw;
+    margin-right: 1vw;
     position: fixed;
 }
 
